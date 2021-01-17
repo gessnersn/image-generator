@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+
+    <div class="input-group">
+      <form action="/search" method="GET">
+        <h4>Define your desired image properties</h4>
+        <p>
+          <label for="width">Width in pixel (max 10000):</label>
+          <input
+              class="input-element"
+              value=""
+              placeholder="640"
+              name="width"
+              id="width"
+          />
+        </p>
+        <p>
+          <label for="height">Height in pixel (max 10000):</label>
+          <input
+              class="input-element"
+              value=""
+              placeholder="480"
+              name="height"
+              id="height"
+          />
+        </p>
+        <p>
+          <label for="r">Red value function as f(x,y), e.g. "x * y":</label>
+          <input
+              label=""
+              class="input-element"
+              value=""
+              placeholder="x * y"
+              name="r"
+              id="r"
+          />
+        </p>
+        <p>
+          <label for="g">Green value function as f(x,y), e.g. "x * y":</label>
+          <input
+              class="input-element"
+              value=""
+              placeholder="255"
+              name="g"
+              id="g"
+          />
+        </p>
+        <p>
+          <label for="b">Blue value function as f(x,y), e.g. "x * y":</label>
+          <input
+              class="input-element"
+              value=""
+              placeholder="255"
+              name="b"
+              id="b"
+          />
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src={{ .Image }}>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

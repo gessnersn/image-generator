@@ -1,0 +1,27 @@
+input, button {
+    vertical-align:middle;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+.input-group {
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+}
+.input-element {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+label {
+    width: 300px;
+    text-align: right;
+}
+form {
+    margin: auto;
+}

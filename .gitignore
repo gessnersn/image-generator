@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+imagen
 
 # Test binary, built with `go test -c`
 *.test
@@ -16,3 +17,8 @@
 
 # Jetbrains IDEs
 .idea
+
+# environment files
+.env
+
+tmp
