@@ -15,5 +15,9 @@ go get -d -v
 go build
 ./imagen
 ```
-
 Access the web app at `http://localhost:8000/imagen/`
+
+## Start for development
+```
+fresh
+```
