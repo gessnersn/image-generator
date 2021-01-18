@@ -6,6 +6,9 @@
 *.dylib
 imagen
 
+# generated images
+*.png
+
 # Test binary, built with `go test -c`
 *.test
 

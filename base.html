@@ -11,16 +11,15 @@
 <body>
   <div class="container">
     <h1>{{ .Title }}</h1>
-
     <div class="input-group">
-      <form action="/search" method="GET">
+      <form action="/imagen" method="get">
         <h4>Define your desired image properties</h4>
         <p>
           <label for="width">Width in pixel (max 10000):</label>
           <input
               class="input-element"
-              value=""
-              placeholder="640"
+              value=640
+              placeholder="width (px)"
               name="width"
               id="width"
           />
@@ -29,8 +28,8 @@
           <label for="height">Height in pixel (max 10000):</label>
           <input
               class="input-element"
-              value=""
-              placeholder="480"
+              value=480
+              placeholder="height (px)"
               name="height"
               id="height"
           />
@@ -40,8 +39,8 @@
           <input
               label=""
               class="input-element"
-              value=""
-              placeholder="x * y"
+              value="x * y"
+              placeholder="f(x,y)"
               name="r"
               id="r"
           />
@@ -50,8 +49,8 @@
           <label for="g">Green value function as f(x,y), e.g. "x * y":</label>
           <input
               class="input-element"
-              value=""
-              placeholder="255"
+              value=255
+              placeholder="f(x,y)"
               name="g"
               id="g"
           />
@@ -60,19 +59,24 @@
           <label for="b">Blue value function as f(x,y), e.g. "x * y":</label>
           <input
               class="input-element"
-              value=""
-              placeholder="255"
+              value=255
+              placeholder="f(x,y)"
               name="b"
               id="b"
           />
         </p>
+        <p>
+          <label for="submit_button"></label>
+          <input type="submit" value="Generate Image" id="submit_button">
+        </p>
       </form>
     </div>
   </div>
-
-  <div class="container">
+  {{ if ne .Image "" }}
+  <div class="image-container">
     <img src={{ .Image }}>
   </div>
+  {{ end }}
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -1,12 +1,25 @@
 input, button {
     vertical-align:middle;
 }
+input[type=submit] {
+    background: aliceblue;
+    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
+    width: 215px;
+    float: right;
+}
 h1 {
     text-align: center;
+    margin: 10px;
 }
 .container {
     max-width: 800px;
     margin: auto;
+}
+.image-container {
+    text-align: center;
+    margin: 10px;
 }
 .input-group {
     width: 100%;
