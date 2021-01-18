@@ -1,6 +1,8 @@
 # imagen
 A web service written in Go to generate images by providing functions for RGB values.
 
+Inspired by [a tour of Go](https://tour.golang.org/list).
+
 ## Published Docker images
 See released images on Docker Hub: 
 https://hub.docker.com/r/gessnersn/imagen
