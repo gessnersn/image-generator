@@ -134,7 +134,11 @@ func (i Image) At(x, y int) color.Color {
 	greenValue = goexpression.Eval(greenExpression, context)
 	blueValue = goexpression.Eval(blueExpression, context)
 
-	col := color.RGBA{uint8(redValue), uint8(greenValue), uint8(blueValue), 255}
+	redResult := int(redValue) % 256
+	greenResult := int(greenValue) % 256
+	blueResult := int(blueValue) % 256
+
+	col := color.RGBA{uint8(redResult), uint8(greenResult), uint8(blueResult), 255}
 	return col
 }
 
