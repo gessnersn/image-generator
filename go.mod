@@ -11,6 +11,6 @@ require (
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/fresh v0.0.0-20190826141211-0fa698148017 // indirect
-	github.com/zdebeer99/goexpression v0.0.0-20200529021658-821357644f79 // indirect
+	github.com/zdebeer99/goexpression v0.0.0-20200529021658-821357644f79
 	golang.org/x/text v0.3.5 // indirect
 )
