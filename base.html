@@ -15,52 +15,52 @@
       <form action="/imagen" method="get">
         <h4>Define your desired image properties</h4>
         <p>
-          <label for="width">Width in pixel (max 10000):</label>
+          <label for="width"><b>Width</b> in pixel (max 4000):</label>
           <input
               class="input-element"
-              value=640
+              value="{{ .Width }}"
               placeholder="width (px)"
               name="width"
               id="width"
           />
         </p>
         <p>
-          <label for="height">Height in pixel (max 10000):</label>
+          <label for="height"><b>Height</b> in pixel (max 4000):</label>
           <input
               class="input-element"
-              value=480
+              value="{{ .Height }}"
               placeholder="height (px)"
               name="height"
               id="height"
           />
         </p>
         <p>
-          <label for="r">Red value function as f(x,y), e.g. "x * y":</label>
+          <label for="r"><b>Red</b> value function as f(x,y):</label>
           <input
               label=""
               class="input-element"
-              value="x * y"
-              placeholder="f(x,y)"
+              value="{{ .Red }}"
+              placeholder="x*x + y*y"
               name="r"
               id="r"
           />
         </p>
         <p>
-          <label for="g">Green value function as f(x,y), e.g. "x * y":</label>
+          <label for="g"><b>Green</b> value function as f(x,y):</label>
           <input
               class="input-element"
-              value=255
-              placeholder="f(x,y)"
+              value="{{ .Green }}"
+              placeholder="y / 2"
               name="g"
               id="g"
           />
         </p>
         <p>
-          <label for="b">Blue value function as f(x,y), e.g. "x * y":</label>
+          <label for="b"><b>Blue</b> value function as f(x,y):</label>
           <input
               class="input-element"
-              value=255
-              placeholder="f(x,y)"
+              value="{{ .Blue }}"
+              placeholder="255"
               name="b"
               id="b"
           />

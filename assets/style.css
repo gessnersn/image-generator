@@ -13,6 +13,10 @@ h1 {
     text-align: center;
     margin: 10px;
 }
+h4 {
+    text-align: center;
+    margin: 10px;
+}
 .container {
     max-width: 800px;
     margin: auto;
@@ -32,8 +36,8 @@ h1 {
     text-align: center;
 }
 label {
-    width: 300px;
-    text-align: right;
+    width: 230px;
+    text-align: left;
 }
 form {
     margin: auto;

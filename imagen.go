@@ -16,7 +16,16 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var baseTpl = template.Must(template.ParseFiles("base.html"))
+var (
+	baseTpl = template.Must(template.ParseFiles("base.html"))
+
+	widthDefault = "512"
+	heightDefault = "512"
+	redDefault = "x*x + y*y"
+	greenDefault = "y / 2"
+	blueDefault = "255"
+	sizeLimit = 4000
+)
 
 func main() {
 	port := getPortFromEnv()
@@ -60,6 +69,22 @@ func imagenHandler(writer http.ResponseWriter, request *http.Request) {
 	green, greenExists := request.Form["g"]
 	blue, blueExists := request.Form["b"]
 
+	if len(width) == 1 && width[0] == "" {
+		width = []string{widthDefault}
+	}
+	if len(height) == 1 && height[0] == "" {
+		height = []string{heightDefault}
+	}
+	if len(red) == 1 && red[0] == "" {
+		red = []string{redDefault}
+	}
+	if len(green) == 1 && green[0] == "" {
+		green = []string{greenDefault}
+	}
+	if len(blue) == 1 && blue[0] == "" {
+		blue = []string{blueDefault}
+	}
+
 	imagePath := ""
 	if widthExists && heightExists && redExists && greenExists && blueExists {
 		imagePath = computeImage(width, height, red, green, blue)
@@ -72,9 +97,19 @@ func imagenHandler(writer http.ResponseWriter, request *http.Request) {
 	data := struct {
 		Title string
 		Image string
+		Width string
+		Height string
+		Red string
+		Green string
+		Blue string
 	}{
 		Title: "Imagen - Image Generator",
 		Image: imagePath,
+		Width: strings.Join(width, ""),
+		Height: strings.Join(height, ""),
+		Red: strings.Join(red, ""),
+		Green: strings.Join(green, ""),
+		Blue: strings.Join(blue, ""),
 	}
 	templateError := baseTpl.Execute(writer, data)
 	check(templateError)
@@ -90,6 +125,13 @@ func computeImage(width []string, height []string, red []string, green []string,
 	redString := strings.Join(red, "")
 	greenString := strings.Join(green, "")
 	blueString := strings.Join(blue, "")
+
+	if widthInt > sizeLimit {
+		widthInt, _ = strconv.Atoi(widthDefault)
+	}
+	if heightInt > sizeLimit {
+		heightInt, _ = strconv.Atoi(heightDefault)
+	}
 
 	newImage := Image{
 		widthInt, heightInt, redString, greenString, blueString,
