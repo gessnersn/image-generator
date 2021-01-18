@@ -9,5 +9,5 @@ FROM scratch
 COPY --from=builder /go/bin/imagen /imagen
 COPY assets /assets
 COPY base.html /base.html
-COPY .env /.env
+ENV PORT 8000
 ENTRYPOINT ["/imagen"]
