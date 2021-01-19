@@ -2,20 +2,35 @@ input, button {
     vertical-align:middle;
 }
 input[type=submit] {
-    background: royalblue;
+    background: darkcyan;
     color: lightgray;
     border-radius: 5px;
     margin: auto;
     padding: 5px;
     width: 215px;
 }
-h1 {
+body {
+    font-family: "monospace";
+    background-color: lightcyan;
+}
+header {
     text-align: center;
-    margin: 10px;
+    color: lightgray;
+    background-image: url("header.png");
+    height: 200px;
+}
+header .container {
+    vertical-align: middle;
+    position: relative;
+    top: 75px;
 }
 h4 {
+    color: #444444;
     text-align: center;
-    margin: 10px;
+    margin: 20px;
+}
+p {
+    color: #444444;
 }
 .container {
     max-width: 800px;
@@ -36,7 +51,7 @@ h4 {
     text-align: center;
 }
 label {
-    width: 230px;
+    width: 300px;
     text-align: left;
 }
 form {

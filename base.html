@@ -9,11 +9,15 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
   <div class="container">
-    <h1>{{ .Title }}</h1>
     <div class="input-group">
       <form action="/imagen" method="get">
-        <h4>Define your desired image properties</h4>
+        <h4>Define your desired image properties:</h4>
         <p>
           <label for="width"><b>Width</b> in pixel (max 4000):</label>
           <input
