@@ -21,5 +21,6 @@ Access the web app at `http://localhost:8000/imagen/`
 
 ## Start for development
 ```
+go get github.com/pilu/fresh
 fresh
 ```
