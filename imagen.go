@@ -103,7 +103,7 @@ func imagenHandler(writer http.ResponseWriter, request *http.Request) {
 		Green string
 		Blue string
 	}{
-		Title: "Imagen - Image Generator",
+		Title: "ImaGen - Image Generator",
 		Image: imagePath,
 		Width: strings.Join(width, ""),
 		Height: strings.Join(height, ""),
