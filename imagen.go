@@ -47,7 +47,7 @@ func getPortFromEnv() string {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "3000"
+		port = "8000"
 	}
 	return port
 }
