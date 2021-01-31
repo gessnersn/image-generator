@@ -34,8 +34,7 @@ func main() {
 	fileServer := http.FileServer(http.Dir("assets"))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
 
-	mux.HandleFunc("/", indexHandler)
-	mux.HandleFunc("/imagen/", imagenHandler)
+	mux.HandleFunc("/", imagenHandler)
 	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
 
@@ -52,12 +51,6 @@ func getPortFromEnv() string {
 	return port
 }
 
-func indexHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprint(
-		writer,
-		"This is the index page, you can also explore the '/imagen' subpage!",
-	)
-}
 
 func imagenHandler(writer http.ResponseWriter, request *http.Request) {
 	special := "form input:\n"
