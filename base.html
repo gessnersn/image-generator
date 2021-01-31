@@ -10,86 +10,90 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>{{ .Title }}</h1>
+  <div id="page-container">
+    <div id="content-wrap">
+      <header>
+        <div class="container">
+          <h1>{{ .Title }}</h1>
+        </div>
+      </header>
+      <div class="container">
+        <div class="input-group">
+          <form action="/" method="get">
+            <h4>Define your desired image properties:</h4>
+            <p>
+              <label for="width"><b>Width</b> in pixel (max 4000):</label>
+              <input
+                  class="input-element"
+                  value="{{ .Width }}"
+                  placeholder="width (px)"
+                  name="width"
+                  id="width"
+              />
+            </p>
+            <p>
+              <label for="height"><b>Height</b> in pixel (max 4000):</label>
+              <input
+                  class="input-element"
+                  value="{{ .Height }}"
+                  placeholder="height (px)"
+                  name="height"
+                  id="height"
+              />
+            </p>
+            <p>
+              <label for="r"><b>Red</b> value function as f(x,y):</label>
+              <input
+                  label=""
+                  class="input-element"
+                  value="{{ .Red }}"
+                  placeholder="x*x + y*y"
+                  name="r"
+                  id="r"
+              />
+            </p>
+            <p>
+              <label for="g"><b>Green</b> value function as f(x,y):</label>
+              <input
+                  class="input-element"
+                  value="{{ .Green }}"
+                  placeholder="y / 2"
+                  name="g"
+                  id="g"
+              />
+            </p>
+            <p>
+              <label for="b"><b>Blue</b> value function as f(x,y):</label>
+              <input
+                  class="input-element"
+                  value="{{ .Blue }}"
+                  placeholder="255"
+                  name="b"
+                  id="b"
+              />
+            </p>
+            <p class="centered">
+              <input type="submit" value="Generate Image" id="submit_button">
+            </p>
+          </form>
+        </div>
+      </div>
+      {{ if ne .Image "" }}
+      <div class="image-container">
+        <img src={{ .Image }}>
+      </div>
+      {{ end }}
     </div>
-  </header>
-  <div class="container">
-    <div class="input-group">
-      <form action="/" method="get">
-        <h4>Define your desired image properties:</h4>
-        <p>
-          <label for="width"><b>Width</b> in pixel (max 4000):</label>
-          <input
-              class="input-element"
-              value="{{ .Width }}"
-              placeholder="width (px)"
-              name="width"
-              id="width"
-          />
-        </p>
-        <p>
-          <label for="height"><b>Height</b> in pixel (max 4000):</label>
-          <input
-              class="input-element"
-              value="{{ .Height }}"
-              placeholder="height (px)"
-              name="height"
-              id="height"
-          />
-        </p>
-        <p>
-          <label for="r"><b>Red</b> value function as f(x,y):</label>
-          <input
-              label=""
-              class="input-element"
-              value="{{ .Red }}"
-              placeholder="x*x + y*y"
-              name="r"
-              id="r"
-          />
-        </p>
-        <p>
-          <label for="g"><b>Green</b> value function as f(x,y):</label>
-          <input
-              class="input-element"
-              value="{{ .Green }}"
-              placeholder="y / 2"
-              name="g"
-              id="g"
-          />
-        </p>
-        <p>
-          <label for="b"><b>Blue</b> value function as f(x,y):</label>
-          <input
-              class="input-element"
-              value="{{ .Blue }}"
-              placeholder="255"
-              name="b"
-              id="b"
-          />
-        </p>
-        <p class="centered">
-          <input type="submit" value="Generate Image" id="submit_button">
-        </p>
-      </form>
-    </div>
-  </div>
-  {{ if ne .Image "" }}
-  <div class="image-container">
-    <img src={{ .Image }}>
-  </div>
-  {{ end }}
 
-  <footer>
-    <div class="container">
-      <p>Inspired by: <a href="https://tour.golang.org/list">A Tour of Go</a></p>
-    </div>
-  </footer>
+    <footer>
+      <div class="container">
+        <p>Inspired by: <a href="https://tour.golang.org/list">A Tour of Go</a></p>
+      </div>
+    </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </div>
 </body>
 </html>
