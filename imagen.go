@@ -20,10 +20,10 @@ var (
 	baseTpl = template.Must(template.ParseFiles("base.html"))
 
 	widthDefault = "512"
-	heightDefault = "512"
+	heightDefault = "256"
 	redDefault = "x*x + y*y"
 	greenDefault = "y / 2"
-	blueDefault = "255"
+	blueDefault = "0"
 	sizeLimit = 4000
 )
 
